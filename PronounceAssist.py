@@ -1,6 +1,4 @@
 from gtts import gTTS
-from playsound import playsound
-import os
 import vlc
 
 # Convert text to speech using gTTS
