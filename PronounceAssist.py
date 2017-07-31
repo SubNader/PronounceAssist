@@ -1,7 +1,7 @@
 from gtts import gTTS
 from playsound import playsound
 import os
-
+import vlc
 
 # Convert text to speech using gTTS
 def say(message,selected_language):
@@ -12,14 +12,11 @@ def say(message,selected_language):
 
 # Play file with cross-platform handling
 def play(path):
-    try:
-        playsound(path)
-    except:
-        try:
-            os.system("ffplay -nodisp -nostats -hide_banner -loglevel error -autoexit "+ path)
-        except:
-            print "Sorry, your operating system is not supported yet."
-            exit(0)
+	try:
+		vlc.MediaPlayer(path).play()
+	except:
+		print "VLC is not installed."
+
 
 # Welcome message
 print "Hi, I'm PronounceAssist!"
@@ -39,3 +36,4 @@ while True:
     message = raw_input("Text: ")
     if message != '':
         say(message,language)
+

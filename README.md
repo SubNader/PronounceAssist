@@ -3,7 +3,7 @@ A simple English/Arabic pronunciation assistant in Python.
 
 ## Requirements
 - gTTS Python module
-- playsound Python module
+- VLC Python module
 
 ## Features
 - English and Arabic support
